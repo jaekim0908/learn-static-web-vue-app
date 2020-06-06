@@ -31,20 +31,11 @@ export default {
 
 <template>
   <div>
-    <div v-if="!products.length">
-      Loading data ...
-    </div>
+    <div v-if="!products.length">Loading data ...</div>
     <ul class="list">
-      <li
-        v-for="(product, index) in products"
-        :key="product.id"
-        role="presentation"
-      >
+      <li v-for="(product, index) in products" :key="product.id" role="presentation">
         <div class="card">
-          <CardContent
-            :name="product.name"
-            :description="product.description"
-          />
+          <CardContent :name="product.name" :description="product.description" />
           <footer class="card-footer">
             <ButtonFooter
               class="delete-item"
@@ -60,6 +51,15 @@ export default {
               iconClasses="fas fa-edit"
               @clicked="selectProduct"
               label="Edit"
+              :dataIndex="index"
+              :dataId="product.id"
+              :item="product"
+            />
+            <ButtonFooter
+              class="edit-item"
+              iconClasses="fas fa-edit"
+              @clicked="selectProduct"
+              label="Edit2"
               :dataIndex="index"
               :dataId="product.id"
               :item="product"
