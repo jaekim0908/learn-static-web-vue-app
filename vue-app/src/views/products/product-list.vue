@@ -38,19 +38,19 @@ export default {
           <CardContent :name="product.name" :description="product.description" />
           <footer class="card-footer">
             <ButtonFooter
-              class="delete-item"
-              iconClasses="fas fa-trash"
-              @clicked="deleteProduct"
-              label="Delete"
+              class="edit-item"
+              iconClasses="fas fa-edit"
+              @clicked="selectProduct"
+              label="Edit"
               :dataIndex="index"
               :dataId="product.id"
               :item="product"
             />
             <ButtonFooter
-              class="edit-item"
-              iconClasses="fas fa-edit"
-              @clicked="selectProduct"
-              label="EditEdit"
+              class="delete-item"
+              iconClasses="fas fa-trash"
+              @clicked="deleteProduct"
+              label="Delete"
               :dataIndex="index"
               :dataId="product.id"
               :item="product"
